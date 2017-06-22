@@ -97,6 +97,10 @@
 
 #pragma mark -- Setters
 
+- (void)setAnimationDoesLoop:(BOOL)loopAnimation {
+    [self setAnimationDoesLoop:loopAnimation updateAnimation:YES];
+}
+
 - (void)setAnimationDoesLoop:(BOOL)loopAnimation updateAnimation:(BOOL)updateAnimation {
   _loopAnimation = loopAnimation;
   if (updateAnimation) {
@@ -137,6 +141,10 @@
   }
 }
 
+- (void)setAnimationSpeed:(CGFloat)speed {
+    [self setAnimationSpeed:speed updateAnimation:YES];
+}
+
 - (void)setAnimationSpeed:(CGFloat)speed updateAnimation:(BOOL)updateAnimation {
   _animationSpeed = speed;
   
@@ -148,6 +156,10 @@
 }
 
 #pragma mark -- Getters
+
+- (void)setAnimatedProgress:(CGFloat)progress {
+    _animatedProgress = progress;
+}
 
 - (CGFloat)animatedProgress {
   if (_animationIsPlaying) {
